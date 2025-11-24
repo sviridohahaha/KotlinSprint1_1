@@ -9,7 +9,7 @@ fun main() {
 
     var employeesAmount: Int = 2000
 
-   // println(employeesAmount)
+    // println(employeesAmount)
 
     employeesAmount = 2000 - 1
     println(employeesAmount)
