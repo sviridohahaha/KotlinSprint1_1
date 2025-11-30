@@ -4,7 +4,6 @@ fun main(){
     val day = 5
 
     val isArmsAndAbs = day % 2 != 0
-    val isLegsAndBack = day % 2 == 0
 
     println("""
         Упражнения для рук: $isArmsAndAbs
