@@ -4,6 +4,9 @@ const val AGE_OF_MAJORITY = 18
 
 fun main() {
     val yearNow = 2025
+
+    println("Введите Ваш год рождения:")
+
     val yearOfBirthday = readLine()?.toIntOrNull()
 
     if (yearNow - yearOfBirthday!! >= AGE_OF_MAJORITY) println("Показать экран со скрытым контентом")
