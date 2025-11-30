@@ -1,8 +1,8 @@
 package lesson5
 
 fun main() {
-    val number1 = 3
-    val number2 = 5
+    val number1 = (0..10).random()
+    val number2 = (0..10).random()
 
     println("Решите пример: $number1 + $number2 =")
 
