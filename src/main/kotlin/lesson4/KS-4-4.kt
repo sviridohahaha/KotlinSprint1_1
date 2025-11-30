@@ -8,8 +8,8 @@ fun main(){
 
     println("""
         Упражнения для рук: $isArmsAndAbs
-        Упражнения для ног: $isLegsAndBack
-        Упражнения для спины: $isLegsAndBack
+        Упражнения для ног: ${!isArmsAndAbs}
+        Упражнения для спины: ${!isArmsAndAbs}
         Упражнения для пресса: $isArmsAndAbs
     """.trimIndent())
 }
