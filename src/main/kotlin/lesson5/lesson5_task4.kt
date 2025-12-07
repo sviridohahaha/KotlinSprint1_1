@@ -20,4 +20,5 @@ fun main() {
         if (readln() == PASSWORD) println("User $USERNAME, you are allowed to board the spaceship \"Heart of Gold\"!")
         else println("Sorry, your password is incorrect")
     }
+
 }
