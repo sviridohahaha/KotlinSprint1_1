@@ -6,7 +6,7 @@ fun main() {
 
     println("Решите пример: $number1 + $number2 =")
 
-    val result = readLine()?.toIntOrNull()
+    val result = readln().toInt()
 
     if (result == number1 + number2) println("Добро пожаловать!") else println("Доступ запрещён!")
 }
