@@ -4,6 +4,18 @@ plugins {
     kotlin("jvm") version "1.9.0"
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "19"
+    }
+}
+
 group = "me.user"
 version = "1.0-SNAPSHOT"
 
@@ -20,5 +32,5 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "19"
 }
