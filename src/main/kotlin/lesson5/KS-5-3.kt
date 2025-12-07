@@ -6,8 +6,8 @@ fun main() {
 
     println("Введите два числа от 0 до 42:")
 
-    val number1 = readLine()?.toIntOrNull()
-    val number2 = readLine()?.toIntOrNull()
+    val number1 = readln().toInt()
+    val number2 = readln().toInt()
 
     if ((number1 == winNumber1 || number1 == winNumber2) && (number2 == winNumber1 || number2 == winNumber2)) {
         println("Поздравляем! Вы выиграли главный приз!")
