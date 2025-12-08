@@ -1,0 +1,20 @@
+package lesson5
+
+fun main() {
+    val winNumber1 = (0..42).random()
+    val winNumber2 = (0..42).random()
+
+    println("Введите два числа от 0 до 42:")
+
+    val number1 = readln().toInt()
+    val number2 = readln().toInt()
+
+    if ((number1 == winNumber1 || number1 == winNumber2) && (number2 == winNumber1 || number2 == winNumber2)) {
+        println("Поздравляем! Вы выиграли главный приз!")
+    } else if ((number1 == winNumber1 || number1 == winNumber2) || (number2 == winNumber1 || number2 == winNumber2)) {
+        println("Вы выиграли утешительный приз!")
+    } else println("Неудача!")
+
+    println("Выигрышные числа: $winNumber1 и $winNumber2")
+
+}
