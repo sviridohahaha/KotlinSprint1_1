@@ -1,13 +1,12 @@
 package lesson6
 
+const val MILLISECONDS_PER_SECONDS = 1000
+
 fun main() {
     println("How many seconds do I need to register?")
     val seconds = readln().toInt()
-    var secondsForTimer = seconds
 
-    while (secondsForTimer > 0) {
-        Thread.sleep(1000)
-        secondsForTimer--
-    }
+    Thread.sleep((seconds * MILLISECONDS_PER_SECONDS).toLong())
+
     println("$seconds seconds have passed")
 }
