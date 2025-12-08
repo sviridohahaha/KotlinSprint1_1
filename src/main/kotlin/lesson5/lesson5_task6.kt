@@ -5,7 +5,7 @@ import kotlin.math.pow
 const val CENTIMETERS_IN_METER = 100
 const val NORMAL_BODY_WEIGHT = 18.5
 const val EXCESS_BODY_WEIGHT = 25.0
-const val FATNESS = 29.9
+const val FATNESS = 30.0
 
 fun main() {
     println("Enter your weight (in kilograms):")
