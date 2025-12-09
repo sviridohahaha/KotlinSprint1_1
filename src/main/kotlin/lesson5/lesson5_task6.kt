@@ -20,8 +20,8 @@ fun main() {
 
     val category = when {
         bmi < NORMAL_BODY_WEIGHT -> "Insufficient body weight"
-        bmi in NORMAL_BODY_WEIGHT..<EXCESS_BODY_WEIGHT -> "Normal body weight"
-        bmi in EXCESS_BODY_WEIGHT..<FATNESS -> "Excess body weight"
+        bmi < EXCESS_BODY_WEIGHT -> "Normal body weight"
+        bmi < FATNESS -> "Excess body weight"
         else -> "Fatness"
     }
     println("Your BMI: %.2f".format(bmi))
