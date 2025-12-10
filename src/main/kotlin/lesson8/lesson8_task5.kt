@@ -6,11 +6,11 @@ fun main() {
 
     val ingredients = Array(size) { "" }
 
-    for (i in ingredients) {
+    for (i in ingredients.indices) {
         println("Enter an ingredient:")
         val newIngredient = readln()
 
-        ingredients[ingredients.indexOf(i)] = newIngredient
+        ingredients[i] = newIngredient
     }
 
     println(ingredients.joinToString())
