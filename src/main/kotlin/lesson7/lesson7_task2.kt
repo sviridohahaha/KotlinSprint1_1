@@ -9,8 +9,8 @@ fun main() {
         println("Enter your authorization code:")
         val enteredCode = readln().toInt()
 
-        if (enteredCode == code) println("Welcome!")
-        else println("You entered the wrong code!")
+        if (enteredCode != code) println("You entered the wrong code!")
     }
     while (enteredCode != code)
+    println("Welcome!")
 }
