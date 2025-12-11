@@ -8,7 +8,7 @@ fun main() {
     println("Enter the unnecessary ingredient:")
     val unnecessaryIngredients = readln()
 
-    if (ingredients.contains(unnecessaryIngredients)) {
+    if (ingredients.indexOf(unnecessaryIngredients) >= 0) {
         println("Enter a new ingredient:")
         val newIngredient = readln()
 
