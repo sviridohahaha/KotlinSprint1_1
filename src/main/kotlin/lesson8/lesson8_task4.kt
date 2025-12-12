@@ -8,11 +8,13 @@ fun main() {
     println("Enter the unnecessary ingredient:")
     val unnecessaryIngredients = readln()
 
-    if (ingredients.indexOf(unnecessaryIngredients) >= 0) {
+    val indexOfUnnecessaryIngredient = ingredients.indexOf(unnecessaryIngredients)
+
+    if (indexOfUnnecessaryIngredient >= 0) {
         println("Enter a new ingredient:")
         val newIngredient = readln()
 
-        ingredients[ingredients.indexOf(unnecessaryIngredients)] = newIngredient
+        ingredients[indexOfUnnecessaryIngredient] = newIngredient
 
         println("Ready! You have saved the recipe:")
         for (i in ingredients) println(i)
