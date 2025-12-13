@@ -5,20 +5,25 @@ fun main() {
     do {
         println("Enter the password length (minimum 6 characters):")
         passwordLength = readln().toInt()
-        if (passwordLength < 6)  println("Password length must be at least 6 characters. Please try again:")
-    }
-    while (passwordLength < 6)
+        if (passwordLength < 6) println("Password length must be at least 6 characters. Please try again:")
+    } while (passwordLength < 6)
 
-    var password = ""
+    var password: MutableList<Char>
     val uppercaseLetters = ('A'..'Z')
     val lowercaseLetters = ('a'..'z')
-    val numbers = (0..9)
+    val numbers = ('0'..'9')
     val randomCharacters = uppercaseLetters + lowercaseLetters + numbers
 
-    for (i in 1..passwordLength) {
-        val part = randomCharacters.random()
-        password += part
-    }
+    do {
+        password = mutableListOf<Char>()
+        for (i in 1..passwordLength) {
+            val part = randomCharacters.random()
+            password.add(part)
+        }
+    } while (!(password.contains(uppercaseLetters.random()) &&
+                password.contains(lowercaseLetters.random()) && password.contains(numbers.random()))
+    )
 
-    println("Your password: $password")
+    print("Your password: ")
+    password.forEach { print(it) }
 }
