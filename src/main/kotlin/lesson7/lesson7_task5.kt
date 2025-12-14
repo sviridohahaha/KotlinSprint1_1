@@ -8,18 +8,21 @@ fun main() {
         if (passwordLength < 6) println("Password length must be at least 6 characters. Please try again:")
     } while (passwordLength < 6)
 
-    val password = mutableListOf<Char>()
     val uppercaseLetters = 'A'..'Z'
     val lowercaseLetters = 'a'..'z'
     val numbers = '0'..'9'
     val randomCharacters = uppercaseLetters + lowercaseLetters + numbers
 
-    do {
-        for (i in 1..passwordLength) password.add(randomCharacters.random())
+    val password = mutableListOf<Char>()
+    password += uppercaseLetters.random()
+    password += lowercaseLetters.random()
+    password += numbers.random()
 
-    } while (password.intersect(uppercaseLetters).isEmpty() &&
-        password.intersect(lowercaseLetters).isEmpty() && password.intersect(numbers).isEmpty()
-    )
+    repeat(passwordLength - 3) {
+        password += randomCharacters.random()
+    }
+
+    password.shuffle()
 
     println("Your password: ${password.joinToString("")}")
 }
