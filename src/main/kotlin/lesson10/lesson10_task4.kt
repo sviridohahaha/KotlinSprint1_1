@@ -10,7 +10,7 @@ fun main() {
         if (playRound(minNumber, maxNumber) == "user") userWins++
         println("Do you want to roll the dice again? yes/no")
         continuePlaying = readln()
-    } while (continuePlaying == "yes")
+    } while (continuePlaying.lowercase() == "yes")
 
     println("You won $userWins times!")
 }
