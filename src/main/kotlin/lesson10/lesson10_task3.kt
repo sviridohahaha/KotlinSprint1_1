@@ -10,7 +10,7 @@ fun main() {
 }
 
 fun generatePassword(length: Int): String {
-    val digits = "0123456789"
+    val digits = '0'..'9'
     val specialChars = "!\"#$%&'()*+,-./ "
 
     val password = mutableListOf<Char>()
