@@ -14,8 +14,10 @@ class Room(
     val participants: MutableList<Participant> = mutableListOf(),
 ) {
     fun addParticipant(user: Participant) {
-        participants.add(user)
-        println("User ${user.nickname} added to the room \"$title\".")
+        if (participants.indexOfFirst { it.nickname == user.nickname } < 0) {
+            participants.add(user)
+            println("User ${user.nickname} added to the room \"$title\".")
+        } else println("A user with that name already exists")
     }
 
     fun updateStatus(userName: String, newStatus: String) {
