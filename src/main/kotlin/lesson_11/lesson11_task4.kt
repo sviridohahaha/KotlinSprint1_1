@@ -4,6 +4,7 @@ class RecipeCategory(
     val title: String,
     val description: String,
     val imageUrl: String,
+    val recipes: List<Recipe>
 ) {
 
 }
