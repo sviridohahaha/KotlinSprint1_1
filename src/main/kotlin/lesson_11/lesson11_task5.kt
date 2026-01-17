@@ -4,51 +4,13 @@ class ForumUser(val userId: Int, val userName: String)
 
 class Message(val authorId: Int, val message: String)
 
-class UserBuilder {
-    private var userId: Int = 0
-    private var userName: String = ""
-
-    fun setUserId(id: Int): UserBuilder {
-        this.userId = id
-        return this
-    }
-
-    fun setUserName(name: String): UserBuilder {
-        this.userName = name
-        return this
-    }
-
-    fun build(): ForumUser {
-        return ForumUser(userId, userName)
-    }
-}
-
-class MessageBuilder {
-    private var authorId: Int = 0
-    private var messageText: String = ""
-
-    fun setAuthorId(id: Int): MessageBuilder {
-        this.authorId = id
-        return this
-    }
-
-    fun setMessage(message: String): MessageBuilder {
-        this.messageText = message
-        return this
-    }
-
-    fun build(): Message {
-        return Message(authorId, messageText)
-    }
-}
-
 class Forum {
     val users = mutableListOf<ForumUser>()
     val messages = mutableListOf<Message>()
 
     fun createNewUser(userName: String): ForumUser {
         val userId = users.size + 1
-        val user = UserBuilder().setUserId(userId).setUserName(userName).build()
+        val user = createForumUser(userId, userName)
         users.add(user)
         return user
     }
@@ -56,7 +18,7 @@ class Forum {
     fun createNewMessage(authorId: Int, message: String): Message? {
         val author = users.find { it.userId == authorId }
         return if (author != null) {
-            val message = MessageBuilder().setAuthorId(authorId).setMessage(message).build()
+            val message = createMessage(authorId, message)
             messages.add(message)
             message
         } else {
@@ -71,6 +33,10 @@ class Forum {
             println("${users.find { user -> user.userId == it.authorId }?.userName}: ${it.message}")
         }
     }
+
+    fun createForumUser(userId: Int, userName: String) = ForumUser(userId, userName)
+
+    fun createMessage(authorId: Int, message: String) = Message(authorId, message)
 }
 
 fun main() {
