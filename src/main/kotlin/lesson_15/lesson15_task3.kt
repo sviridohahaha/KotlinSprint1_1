@@ -3,9 +3,10 @@ package lesson_15
 abstract class ForumUser(val name: String) {
     fun readPosts() = println("$name is reading posts on the forum")
 
-    fun writePosts(post: String) : String {
+    fun writePosts(post: String): String {
         println("$name wrote a post: \"$post\"")
-        return post
+        return post // Возвращаем текст поста для дальнейшего использования. Например, чтобы не
+    // набирая вручную текст удаляемого поста выводить в консоль, какой именно пост мы удалили
     }
 }
 
