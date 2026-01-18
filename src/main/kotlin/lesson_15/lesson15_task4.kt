@@ -1,13 +1,13 @@
 package lesson_15
 
-abstract class Product(val name: String, var quantity: Int)
+abstract class Product(val name: String, val quantity: Int)
 
 interface Searchable {
     fun searchAccessories()
 }
 
 class Instrument(name: String, quantity: Int) : Product(name, quantity), Searchable {
-    override fun searchAccessories() = println("Searching for accessories for $name. Please wait...")
+    override fun searchAccessories() = println("Выполняется поиск товара $name...")
 }
 
 class Accessory(name: String, quantity: Int) : Product(name, quantity)
