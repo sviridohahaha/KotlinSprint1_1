@@ -1,14 +1,13 @@
 package lesson5
 
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
+
+const val QUOTES_URL = "https://mybook.ru/author/duglas-adams/avtostopom-po-galaktike-restoran-u-konca-vselennoj/citations/"
 
 fun main() {
-    val url = "https://mybook.ru/author/duglas-adams/avtostopom-po-galaktike-restoran-u-konca-vselennoj/citations/"
+    val document = Jsoup.connect(QUOTES_URL).get()
 
-    val document: Document = Jsoup.connect(url).get()
-
-    val quotes = document.select("div.sc-2aegk7-2.bzpNIu")
+    val quotes = document.select("article")
 
     if (quotes.isEmpty()) {
         println("No quotes found on the page.")
