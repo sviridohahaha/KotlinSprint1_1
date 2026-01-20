@@ -1,16 +1,16 @@
 package lesson_17
 
-class Package(val trackingNumber: String, var currentLocation: String) {
+class Package(trackingNumber: String, currentLocation: String) {
     private var moveCount: Int = 0
 
-    var location: String
-        get() = currentLocation
+    var location = currentLocation
+        get() = field
         set(value) {
-            if (currentLocation != value) {
+            if (location != value) {
                 moveCount++
-                currentLocation = value
-                println("Package moved to: $currentLocation. Move count: $moveCount")
-            } else println("The package is already in $currentLocation. Move count: $moveCount")
+                field = value
+                println("Package moved to: $location. Move count: $moveCount")
+            } else println("The package is already in $location. Move count: $moveCount")
         }
 }
 
