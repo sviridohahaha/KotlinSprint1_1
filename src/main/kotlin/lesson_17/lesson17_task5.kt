@@ -1,20 +1,17 @@
 package lesson_17
 
-class NewUser(var login: String, private var userPassword: String) {
-    val password: String
-        get() = "*".repeat(userPassword.length)
-
-    var newLogin: String
-        get() = login
-        set(value) {
-            login = value
-            println("Login has been successfully changed to: $login")
-        }
-
-    var passwordChange: String
-        get() = "*".repeat(userPassword.length)
+class NewUser(login: String, userPassword: String) {
+    var password = userPassword
+        get() = "*".repeat(field.length)
         set(value) {
             println("You cannot change the password.")
+        }
+
+    var newLogin = login
+        get() = field
+        set(value) {
+            field = value
+            println("Login has been successfully changed to: $newLogin")
         }
 }
 
@@ -22,7 +19,7 @@ fun main() {
     val user = NewUser("Olesia", "password123")
 
     user.newLogin = "Alesia"
-    user.passwordChange = "newpassword123"
+    user.password = "newpassword123"
 
     println("Current login: ${user.newLogin}")
     println("Current password: ${user.password}")
