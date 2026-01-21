@@ -14,6 +14,7 @@ open class Die() {
 class Die4 : Die() {
     override val sides = 4
 }
+
 class Die6 : Die() {
     override val sides = 6
 }
