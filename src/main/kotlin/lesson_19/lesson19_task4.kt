@@ -1,7 +1,5 @@
 package lesson_19
 
-import java.util.Locale.getDefault
-
 enum class Ammo(val damage: Int) {
     EMPTY(0),
     BLUE(5),
@@ -14,7 +12,7 @@ class Tank {
 
     fun loadAmmo(ammo: Ammo) {
         currentAmmo = ammo
-        println("Tank armed with ${ammo.name.lowercase(getDefault())} ammo")
+        println("Tank armed with ${ammo.name.lowercase()} ammo")
     }
 
     fun shoot() {
