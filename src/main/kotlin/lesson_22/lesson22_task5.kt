@@ -17,9 +17,8 @@ fun main() {
         4.367
     )
 
-    val (title, description, eventDate, distanceFromEarth) = alphaCentauri
-    println("Title: $title")
-    println("Description: $description")
-    println("Event date: $eventDate")
-    println("Distance from Earth: $distanceFromEarth")
+    println("Title: ${alphaCentauri.title}")
+    println("Description: ${alphaCentauri.description}")
+    println("Event date: ${alphaCentauri.eventDate}")
+    println("Distance from Earth: ${alphaCentauri.distanceFromEarth}")
 }
