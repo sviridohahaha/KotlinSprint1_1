@@ -1,6 +1,7 @@
 package lesson_22
 
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 data class GalacticGuide(
     val title: String,
@@ -17,8 +18,10 @@ fun main() {
         4.367
     )
 
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+
     println("Title: ${alphaCentauri.title}")
     println("Description: ${alphaCentauri.description}")
-    println("Event date: ${alphaCentauri.eventDate}")
+    println("Event date: ${alphaCentauri.eventDate.format(formatter)}")
     println("Distance from Earth: ${alphaCentauri.distanceFromEarth}")
 }
